@@ -1,0 +1,82 @@
+<main class="main">
+    <div class="container">
+        <div class="d-flex align-items-center mb-2">
+            <h1>Users</h1> <a routerLink="/signup" class="ml-auto btn btn-theme">Create New</a>
+        </div>
+        <div class="border rounded border-top-0">
+            <div class="table-responsive">
+                <table class="table mb-0 fs-14 table_md">
+                    <thead>
+                        <tr class="user_filter">
+                            <td><input type="search" placeholder="First Name" class="form-control" /></td>
+                            <td><input type="search" placeholder="Last Name" class="form-control" /></td>
+                            <td><input type="search" placeholder="Email Address" class="form-control" /></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th scope="col" width="140" style="min-width:120px;">First Name<a routerLink="/"
+                                    class="ml-2"><i class="fas fa-sort"></i></a></th>
+                            <th scope="col" width="140" style="min-width:120px;">Last Name<a routerLink="/"
+                                    class="ml-2"><i class="fas fa-sort"></i></a></th>
+                            <th scope="col" width="180" style="min-width:180px;">Email Address<a routerLink="/"
+                                    class="ml-2"><i class="fas fa-sort"></i></a></th>
+                            <th scope="col" width="140" style="min-width:110px;">Password<a routerLink="/"
+                                    class="ml-2"><i class="fas fa-sort"></i></a></th>
+                            <th scope="col" width="150" style="min-width:110px;"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>abc</td>
+                            <td>def</td>
+                            <td>abc@gmail.com</td>
+                            <td>123</td>
+                            <td class="text-right"><a routerLink="/signup" class="mx-2" title="Edit"><i
+                                        class="fas fa-pencil-alt"></i></a>|
+                                <a routerLink="/" class="mx-2 text-danger delete_record" title="Delete"><i
+                                        class="fas fa-trash"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>xyz</td>
+                            <td>uvw</td>
+                            <td>xyz@gmail.com</td>
+                            <td>012</td>
+                            <td class="text-right"><a routerLink="/signup" class="mx-2" title="Edit"><i
+                                        class="fas fa-pencil-alt"></i></a>|
+                                <a routerLink="/" class="mx-2 text-danger delete_record" title="Delete"><i
+                                        class="fas fa-trash"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="d-column d-md-flex px-3 py-2 justify-content-between text-center align-items-center border-top">
+                <label class="d-flex align-items-center mb-0 font-weight-normal justify-content-center">Show
+                    <select class="form-control form-control-md mx-2 w-auto">
+                        <option value="10">5</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select> entries</label>
+                <div class="my-3 my-lg-0 fs-14">Showing 1 to 5 of 57 entries</div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination m-0 justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link d-flex align-items-cente" routerLink="/#" aria-label="Previous">
+                                <span aria-hidden="true">
+                                </span> </a> </li>
+                        <li class="page-item active"><a class="page-link d-flex align-items-cente" routerLink="/#">1</a>
+                        </li>
+                        <li class="page-item"><a class="page-link d-flex align-items-cente" routerLink="/#">2</a></li>
+                        <li class="page-item"><a class="page-link d-flex align-items-cente" routerLink="/#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link d-flex align-items-cente" routerLink="/#" aria-label="Next">
+                                <span aria-hidden="true">>></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</main>

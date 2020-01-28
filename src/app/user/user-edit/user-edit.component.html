@@ -1,0 +1,50 @@
+<main class="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 mx-auto px-lg-4 mt-lg-5 pt-lg-4">
+                <!-- <img src="images/logo.png" class="img-fluid d-block mx-auto mb-3" width="95" height="95" alt="logo" /> -->
+                <a class="text-center d-block mb-5 logo_text" routerLink="/user">Contoso University</a>
+                <form class="account_form">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">First Name<span
+                                        class="required ml-1 text-danger font-weight-bold">*</span></label>
+                                <input type="text" value="abc" class="form-control is-invalid">
+                                <div class="invalid-feedback">This field is required</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Last Name<span
+                                        class="required ml-1 text-danger font-weight-bold">*</span></label>
+                                <input type="text" value="def" class="form-control">
+                                <!-- <div class="invalid-feedback">This field is required</div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email Address<span
+                                class="required ml-1 text-danger font-weight-bold">*</span></label>
+                        <input type="email" value="abc@gmail.com" class="form-control">
+                        <!-- <div class="invalid-feedback">This field is required</div> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password<span
+                                class="required ml-1 text-danger font-weight-bold">*</span></label>
+                        <input type="password" value="123" class="form-control">
+                        <!-- <div class="invalid-feedback">This field is required</div> -->
+                    </div>
+                    <div class="form-group pt-3 pb-4">
+                        <!-- <button type="submit" class="btn btn-theme btn-block form_submit_btn_lg">Create User</button> -->
+                        <a routerLink="/user" class="btn btn-theme btn-block form_submit_btn_lg">Create User</a>
+                    </div>
+                </form>
+                <!-- <p class="small text-center text-gray-soft mb-2">By clicking "Sign up" you agree to our <a routerLink="/">Terms of Service</a>
+                </p>
+                <p class="text-gray-soft text-center small mb-2">Already have an account? <a routerLink="/signin">Sign in</a></p>
+                <p class="text-gray-soft text-center small">Trying to sign up to sell themes? <a routerLink="/">Apply to be a seller.</a></p> -->
+            </div>
+        </div>
+    </div>
+</main>
