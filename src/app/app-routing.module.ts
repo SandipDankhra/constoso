@@ -16,13 +16,13 @@ const routes: Routes = [
     path: 'user', component: UserComponent
   },
   {
-    path: '', component: SignupComponent
-  },
-  {
     path: 'signup', component: SignupComponent
   },
   {
     path: 'signin', component: SigninComponent
+  },
+  {
+    path: '', component: SigninComponent
   },
 ];
 
