@@ -1,84 +1,124 @@
-<main class="main">
-    <div class="container">
-        <div class="d-flex align-items-center mb-2">
-            <h1>Users</h1> <a routerLink="/signup" class="ml-auto btn btn-theme">Create New</a>
-        </div>
-        <div class="border rounded border-top-0">
-            <div class="table-responsive">
-                <table class="table mb-0 fs-14 table_md">
-                    <thead>
-                        <tr class="user_filter">
-                            <td><input type="search" placeholder="First Name" class="form-control" /></td>
-                            <td><input type="search" placeholder="Last Name" class="form-control" /></td>
-                            <td><input type="search" placeholder="Email Address" class="form-control" /></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th scope="col" width="140" style="min-width:120px;">First Name<a routerLink="/"
-                                    class="ml-2"><i class="fas fa-sort"></i></a></th>
-                            <th scope="col" width="140" style="min-width:120px;">Last Name<a routerLink="/"
-                                    class="ml-2"><i class="fas fa-sort"></i></a></th>
-                            <th scope="col" width="180" style="min-width:180px;">Email Address<a routerLink="/"
-                                    class="ml-2"><i class="fas fa-sort"></i></a></th>
-                            <th scope="col" width="140" style="min-width:110px;">Password<a routerLink="/"
-                                    class="ml-2"><i class="fas fa-sort"></i></a></th>
-                            <th scope="col" width="150" style="min-width:110px;"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>abc</td>
-                            <td>def</td>
-                            <td>abc@gmail.com</td>
-                            <td>123</td>
-                            <td class="text-right"><a routerLink="/signup" class="mx-2" title="Edit"><i
-                                        class="fas fa-pencil-alt"></i></a>|
-                                <a routerLink="/" class="mx-2 text-danger delete_record" title="Delete"><i
-                                        class="fas fa-trash"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td>xyz</td>
-                            <td>uvw</td>
-                            <td>xyz@gmail.com</td>
-                            <td>012</td>
-                            <td class="text-right"><a routerLink="/signup" class="mx-2" title="Edit"><i
-                                        class="fas fa-pencil-alt"></i></a>|
-                                <a routerLink="/" class="mx-2 text-danger delete_record" title="Delete"><i
-                                        class="fas fa-trash"></i></a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="d-column d-md-flex px-3 py-2 justify-content-between text-center align-items-center border-top">
-                <label class="d-flex align-items-center mb-0 font-weight-normal justify-content-center">Show
-                    <select class="form-control form-control-md mx-2 w-auto">
-                        <option value="10">5</option>
-                        <option value="25">25</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                    </select> entries</label>
-                <div class="my-3 my-lg-0 fs-14">Showing 1 to 5 of 57 entries</div>
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination m-0 justify-content-center">
-                        <li class="page-item">
-                            <a class="page-link d-flex align-items-cente" routerLink="/#" aria-label="Previous">
-                                <span aria-hidden="true">
-                                </span> </a> </li>
-                        <li class="page-item active"><a class="page-link d-flex align-items-cente" routerLink="/#">1</a>
+<div *ngIf="showUserList">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="user.html">Contoso University</a>
+                <button class="navbar-toggler border-0 pr-0" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav w-100">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="">User</a>
                         </li>
-                        <li class="page-item"><a class="page-link d-flex align-items-cente" routerLink="/#">2</a></li>
-                        <li class="page-item"><a class="page-link d-flex align-items-cente" routerLink="/#">3</a></li>
-                        <li class="page-item">
-                            <a class="page-link d-flex align-items-cente" routerLink="/#" aria-label="Next">
-                                <span aria-hidden="true">>></span>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/courses']">Courses</a>
+                        </li>
+                        <li class="nav-item dropdown  ml-lg-auto">
+                            <a class="nav-link dropdown-toggle" href="#" id="login_user_action" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Welcome <span>Prakash</span>
                             </a>
+                            <div class="dropdown-menu login_user_action" aria-labelledby="login_user_action">
+                                <a class="dropdown-item" href="#">Change Password</a>
+                                <a class="dropdown-item" href="signin.html">Logout</a>
+
+                            </div>
                         </li>
+                        <!-- <li class="nav-item">
+                        <a class="nav-link" href="signup.html">Sign up</a>
+                    </li> -->
                     </ul>
-                </nav>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <div class="container">
+            <div class="d-flex align-items-center mb-2">
+                <h1>Users</h1> <a routerLink="/signup" class="ml-auto btn btn-theme">Create New</a>
+            </div>
+            <div class="border rounded border-top-0">
+                <div class="table-responsive">
+                    <table class="table mb-0 fs-14 table_md">
+                        <thead>
+                            <tr class="user_filter">
+                                <td><input type="search" placeholder="First Name" class="form-control" /></td>
+                                <td><input type="search" placeholder="Last Name" class="form-control" /></td>
+                                <td><input type="search" placeholder="Email Address" class="form-control" /></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="col" width="140" style="min-width:120px;">First Name<a routerLink="/"
+                                        class="ml-2"><i class="fas fa-sort"></i></a></th>
+                                <th scope="col" width="140" style="min-width:120px;">Last Name<a routerLink="/"
+                                        class="ml-2"><i class="fas fa-sort"></i></a></th>
+                                <th scope="col" width="180" style="min-width:180px;">Email Address<a routerLink="/"
+                                        class="ml-2"><i class="fas fa-sort"></i></a></th>
+                                <th scope="col" width="140" style="min-width:110px;">Password<a routerLink="/"
+                                        class="ml-2"><i class="fas fa-sort"></i></a></th>
+                                <th scope="col" width="150" style="min-width:110px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let user of userJson let i=index">
+                            <tr>
+                                <td>{{user["firstName"]}}</td>
+                                <td>{{user["lastName"]}}</td>
+                                <td>{{user["email"]}}</td>
+                                <td>{{user["password"]}}</td>
+                                <td class="text-right"><a [routerLink]="['/user/edit',i]" class="mx-2" title="Edit"><i
+                                            class="fas fa-pencil-alt"></i></a>|
+                                    <a (click)="delete(i)" class="mx-2 text-danger delete_record" title="Delete"><i
+                                            class="fas fa-trash"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div
+                    class="d-column d-md-flex px-3 py-2 justify-content-between text-center align-items-center border-top">
+                    <label class="d-flex align-items-center mb-0 font-weight-normal justify-content-center">Show
+                        <select class="form-control form-control-md mx-2 w-auto">
+                            <option value="10">5</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                        </select> entries</label>
+                    <div class="my-3 my-lg-0 fs-14">Showing 1 to 5 of 57 entries</div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination m-0 justify-content-center">
+                            <li class="page-item">
+                                <a class="page-link d-flex align-items-cente" routerLink="/#" aria-label="Previous">
+                                    <span aria-hidden="true">
+                                    </span> </a> </li>
+                            <li class="page-item active"><a class="page-link d-flex align-items-cente"
+                                    routerLink="/#">1</a>
+                            </li>
+                            <li class="page-item"><a class="page-link d-flex align-items-cente" routerLink="/#">2</a>
+                            </li>
+                            <li class="page-item"><a class="page-link d-flex align-items-cente" routerLink="/#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link d-flex align-items-cente" routerLink="/#" aria-label="Next">
+                                    <span aria-hidden="true">>></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div>
-    </div>
-</main>
+    </main>
+    <footer>
+        <div class="container">
+            <p class="mb-0 py-3 text-gray-soft">RxWeb 2019</p>
+        </div>
+    </footer>
+</div>
 {{user}}
-<app-signin [signinChe]="signinCheck" (UsernamePasswordToParent)="check($event)"></app-signin>
+<app-signin *ngIf="showUserSignin" [signinChe]="signinCheck" (UsernamePasswordToParent)="check($event)"
+    (showUserSigninFromChild)="showUserSigninFromChild($event)"></app-signin>

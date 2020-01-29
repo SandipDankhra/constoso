@@ -11,6 +11,8 @@ import { SignupComponent } from './user/signup/signup.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { CourseAddComponent } from './course/course-add/course-add.component';
 import { CourseEditComponent } from './course/course-edit/course-edit.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UserJsonComponent } from './user-json/user-json.component';
 
 
 
@@ -24,13 +26,15 @@ import { CourseEditComponent } from './course/course-edit/course-edit.component'
     UserEditComponent,
     CourseAddComponent,
     CourseEditComponent,
+    UserJsonComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

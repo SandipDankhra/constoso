@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'constoso';
   constructor(private router: Router) { }
   ngOnInit() {
-    this.router.navigateByUrl('/signin');
+    // this.router.navigateByUrl('/user');
   }
 }

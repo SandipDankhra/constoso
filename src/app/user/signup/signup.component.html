@@ -1,16 +1,51 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="user.html">Contoso University</a>
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav w-100">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">User</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="courses.html">Courses</a>
+                    </li>
+                    <li class="nav-item dropdown  ml-lg-auto">
+                        <a class="nav-link dropdown-toggle" href="#" id="login_user_action" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Welcome <span>Prakash</span>
+                        </a>
+                        <div class="dropdown-menu login_user_action" aria-labelledby="login_user_action">
+                            <a class="dropdown-item" href="#">Change Password</a>
+                            <a class="dropdown-item" href="signin.html">Logout</a>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
 <main class="main">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-8 mx-auto px-lg-4 mt-lg-5 pt-lg-4">
                 <!-- <img src="images/logo.png" class="img-fluid d-block mx-auto mb-3" width="95" height="95" alt="logo" /> -->
                 <a class="text-center d-block mb-5 logo_text" routerLink="/user">Contoso University</a>
-                <form class="account_form">
+                <form class="account_form" [formGroup]="userFormGroup">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">First Name<span
                                         class="required ml-1 text-danger font-weight-bold">*</span></label>
-                                <input type="text" value="abc" class="form-control is-invalid">
+                                <input type="text" class="form-control is-invalid" formControlName="firstName">
                                 <div class="invalid-feedback">This field is required</div>
                             </div>
                         </div>
@@ -18,7 +53,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Last Name<span
                                         class="required ml-1 text-danger font-weight-bold">*</span></label>
-                                <input type="text" value="def" class="form-control">
+                                <input type="text" class="form-control" formControlName="lastName">
                                 <!-- <div class="invalid-feedback">This field is required</div> -->
                             </div>
                         </div>
@@ -26,18 +61,18 @@
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email Address<span
                                 class="required ml-1 text-danger font-weight-bold">*</span></label>
-                        <input type="email" value="abc@gmail.com" class="form-control">
+                        <input type="email" class="form-control" formControlName="email">
                         <!-- <div class="invalid-feedback">This field is required</div> -->
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password<span
                                 class="required ml-1 text-danger font-weight-bold">*</span></label>
-                        <input type="password" value="123" class="form-control">
+                        <input type="password" value="123" class="form-control" formControlName="password">
                         <!-- <div class="invalid-feedback">This field is required</div> -->
                     </div>
                     <div class="form-group pt-3 pb-4">
                         <!-- <button type="submit" class="btn btn-theme btn-block form_submit_btn_lg">Create User</button> -->
-                        <a routerLink="/user" class="btn btn-theme btn-block form_submit_btn_lg">Create User</a>
+                        <a (click)="signup()" class="btn btn-theme btn-block form_submit_btn_lg">Create User</a>
                     </div>
                 </form>
                 <!-- <p class="small text-center text-gray-soft mb-2">By clicking "Sign up" you agree to our <a routerLink="/">Terms of Service</a>
@@ -48,3 +83,8 @@
         </div>
     </div>
 </main>
+<footer>
+    <div class="container">
+        <p class="mb-0 py-3 text-gray-soft">RxWeb 2019</p>
+    </div>
+</footer>

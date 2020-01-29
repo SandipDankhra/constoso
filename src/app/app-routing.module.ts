@@ -15,11 +15,24 @@ const routes: Routes = [
   {
     path: 'user', component: UserComponent
   },
+
   {
     path: 'signup', component: SignupComponent
   },
   {
     path: 'signin', component: SigninComponent
+  },
+  {
+    path: 'courses', component: CourseComponent
+  },
+  {
+    path: 'user/edit/:id', component: UserEditComponent
+  },
+  {
+    path: 'course/edit', component: CourseEditComponent
+  },
+  {
+    path: 'course/add', component: CourseAddComponent
   },
   {
     path: '', component: SigninComponent
