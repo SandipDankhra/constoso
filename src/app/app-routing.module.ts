@@ -34,9 +34,7 @@ const routes: Routes = [
   {
     path: 'course/add', component: CourseAddComponent
   },
-  {
-    path: '', component: SigninComponent
-  },
+
 ];
 
 @NgModule({

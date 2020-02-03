@@ -1,3 +1,5 @@
-<app-signin *ngIf="showUserSignin" [signinChe]="signinCheck" (UsernamePasswordToParent)="check($event)"
-    (showUserSigninFromChild)="showUserSigninFromChild($event)"></app-signin>
+<!-- <app-signin *ngIf="showUserSignin" [signinChe]="signinCheck" (UsernamePasswordToParent)="check($event)"
+    (showUserSigninFromChild)="showUserSigninFromChild($event)"></app-signin> -->
+<app-user *ngIf="showUser"></app-user>
+<app-course *ngIf="showCourse"></app-course>
 <router-outlet></router-outlet>

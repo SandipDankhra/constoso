@@ -31,10 +31,11 @@ export class SigninComponent implements OnInit {
   signin() {
     this.hey = [this.userSigninFromgroup.controls.email.value, this.userSigninFromgroup.controls.password.value];
     this.UsernamePasswordToParent.emit("hello");
+    this.showUserSigninFromChild.emit(true);
+    // this.router.navigateByUrl('/user');
     if (this.signinChe) {
       console.log("if " + this.signinChe);
-      this.showUserSigninFromChild.emit(true);
-      // this.router.navigateByUrl('/user');
+
 
     }
     else {

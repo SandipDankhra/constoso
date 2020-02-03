@@ -11,6 +11,6 @@ export class UserJsonService {
   userUrl = 'assets/userJson.json';
   constructor(private http: HttpClient) { }
   getUser() {
-    return this.http.get(this.userUrl)
+    return this.http.get(this.userUrl);
   }
 }

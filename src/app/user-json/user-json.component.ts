@@ -10,6 +10,7 @@ export class UserJsonComponent implements OnInit {
 
   constructor(private userJsonService: UserJsonService) { }
   userJson: User;
+  headers: string[];
   ngOnInit() {
   }
   showConfig() {

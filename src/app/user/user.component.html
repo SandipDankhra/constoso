@@ -24,7 +24,7 @@
                             </a>
                             <div class="dropdown-menu login_user_action" aria-labelledby="login_user_action">
                                 <a class="dropdown-item" href="#">Change Password</a>
-                                <a class="dropdown-item" href="signin.html">Logout</a>
+                                <a class="dropdown-item" (click)="logout()">Logout</a>
 
                             </div>
                         </li>
@@ -40,7 +40,7 @@
     <main class="main">
         <div class="container">
             <div class="d-flex align-items-center mb-2">
-                <h1>Users</h1> <a routerLink="/signup" class="ml-auto btn btn-theme">Create New</a>
+                <h1>Users</h1> <a (click)="openSignup()" class="ml-auto btn btn-theme">Create New</a>
             </div>
             <div class="border rounded border-top-0">
                 <div class="table-responsive">
@@ -66,12 +66,12 @@
                             </tr>
                         </thead>
                         <tbody *ngFor="let user of userJson let i=index">
-                            <tr>
+                            <tr>{{users}}
                                 <td>{{user["firstName"]}}</td>
                                 <td>{{user["lastName"]}}</td>
                                 <td>{{user["email"]}}</td>
                                 <td>{{user["password"]}}</td>
-                                <td class="text-right"><a [routerLink]="['/user/edit',i]" class="mx-2" title="Edit"><i
+                                <td class="text-right"><a (click)="openEdit(i)" class="mx-2" title="Edit"><i
                                             class="fas fa-pencil-alt"></i></a>|
                                     <a (click)="delete(i)" class="mx-2 text-danger delete_record" title="Delete"><i
                                             class="fas fa-trash"></i></a></td>
@@ -119,6 +119,8 @@
         </div>
     </footer>
 </div>
-{{user}}
+<!-- {{users}} -->
 <app-signin *ngIf="showUserSignin" [signinChe]="signinCheck" (UsernamePasswordToParent)="check($event)"
     (showUserSigninFromChild)="showUserSigninFromChild($event)"></app-signin>
+<app-signup *ngIf="showSignup" (showsignup)="signup($event)"></app-signup>
+<app-user-edit *ngIf="showUserEdit" [id]="id" (showUserEdit)="userEdit($event)"></app-user-edit>

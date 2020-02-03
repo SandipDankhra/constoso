@@ -8,8 +8,10 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'constoso';
+  showUser = true;
+  showCourse = false;
   constructor(private router: Router) { }
   ngOnInit() {
-    // this.router.navigateByUrl('/user');
+    //this.router.navigateByUrl('/signin');
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -8,24 +8,10 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
+  @Output() showsignup = new EventEmitter<any>();
   userFormGroup: FormGroup;
   constructor(private formBuilder: FormBuilder) { }
-  userJson = [
-    {
-      "id": "1",
-      "firstName": "Taher",
-      "lastName": "Dahodwala",
-      "email": "dahodwaltaher458@gmail.com",
-      "password": "12345678"
-    },
-    {
-      "id": "2",
-      "firstName": "hello",
-      "lastName": "hey",
-      "email": "hello@gmail.com",
-      "password": "321654987"
-    }
-  ];
+  userJson = [];
   ngOnInit() {
     this.userFormGroup = this.formBuilder.group({
       firstName: [''],
@@ -35,15 +21,14 @@ export class SignupComponent implements OnInit {
     })
   }
   signup() {
-    this.userJson.push({
+
+    this.showsignup.emit({
       "id": (this.userJson.length + 1).toString(),
       "firstName": this.userFormGroup.controls.firstName.value,
       "lastName": this.userFormGroup.controls.lastName.value,
       "email": this.userFormGroup.controls.email.value,
       "password": this.userFormGroup.controls.password.value
     });
-    console.log(this.userJson);
-
   }
 
 }
