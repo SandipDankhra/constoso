@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { HttpParams, HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
+import { FormGroup } from '@angular/forms';
 interface User {
   id: string;
   firstName: string;
@@ -54,7 +55,8 @@ export class UserComponent implements OnInit {
       this.showUserSignin = JSON.parse(window.localStorage.getItem("isLogin"));
     }
   }
-  showUserSigninFromChild(signin: boolean) {
+  showUserSigninFromChild(signin: FormGroup) {
+    console.log(signin);
     console.log("showUserSigninFromChild");
     window.localStorage.setItem("isLogin", "false");
     this.showUserSignin = false;

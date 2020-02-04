@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 export class SigninComponent implements OnInit {
 
   @Input() signinChe: boolean;
-  @Output() UsernamePasswordToParent = new EventEmitter<string>();
-  @Output() showUserSigninFromChild = new EventEmitter<boolean>();
+  @Output() UsernamePasswordToParent = new EventEmitter<FormGroup>();
+  @Output() showUserSigninFromChild = new EventEmitter<FormGroup>();
   userSigninFromgroup: FormGroup;
   constructor(private fromBuilder: FormBuilder, private router: Router) { }
 
@@ -30,8 +30,8 @@ export class SigninComponent implements OnInit {
   }
   signin() {
     this.hey = [this.userSigninFromgroup.controls.email.value, this.userSigninFromgroup.controls.password.value];
-    this.UsernamePasswordToParent.emit("hello");
-    this.showUserSigninFromChild.emit(true);
+    // this.UsernamePasswordToParent.emit(this.userSigninFromgroup);
+    this.showUserSigninFromChild.emit(this.userSigninFromgroup);
     // this.router.navigateByUrl('/user');
     if (this.signinChe) {
       console.log("if " + this.signinChe);
